@@ -1,0 +1,123 @@
+main {
+  width: 1600px;
+  margin: auto;
+  padding: 0px;
+  
+}
+
+header {
+  height: 160px;
+  width:1600px;
+  display: flex;
+  position: fixed;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+  background: #222222;
+   z-index: 1;
+}
+
+section {
+  position: absolute;
+  top: 160px;
+}
+
+div {
+  display: flex;  
+}
+
+aside{
+  width: 675px;
+  margin: 0px;
+  position: relative;
+
+}
+
+article{
+  width: 825px;
+  padding: 30px;
+  margin: 0px;
+}
+
+#arc {
+  font-family: Abril Fatface;
+  font-size: 70px;
+  color: #222;
+  text-transform: none;
+  position: absolute;
+  z-index: 0;
+  bottom: 0px;
+  margin: auto;
+  width: 812px;
+  padding: 50px;
+}
+
+blockquote {
+  font-family: Abril Fatface;
+  font-size: 100px;
+  color: white;
+  background: #444444;
+  padding: 100px;
+  margin: 0;
+}
+
+p, ul, h1, h2 {
+  font-family: Josefin Sans;
+  list-style-type: square;
+}
+
+p, ul {
+  color: #222;
+  font-size: 34px;
+  margin: 20px 0px 60px;
+  line-height: 1.5;
+}
+
+h1{
+  text-transform: uppercase;
+  font-size: 50px;
+  margin: 85px 0px;
+}
+
+h2 {
+  font-size: 48px; 
+  margin: 0px;
+}
+
+.subtitle {
+  font-family: Merriweather;
+  font-size: 35px; 
+  font-style: oblique;
+  font-weight: bold;
+  color: black;
+  margin: 0px;
+}
+
+a {
+  color: white;
+  font-family: Josefin Sans;
+  font-size: 66px;
+  margin: 0 30px;
+  text-decoration: none;
+}
+
+em {
+  font-style: normal;
+  font-size: 140px;
+}
+
+img{
+  height:804px;
+  width: 675px; 
+  object-fit: cover;
+  z-index: -2;
+}
+
+.top p, .top ul {
+  font-size: 40px;
+  line-height: 1.4;
+}
+
+.top {
+  margin: -8px 0px 90px;
+}
