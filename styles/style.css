@@ -124,3 +124,57 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
+
+/* ---------- Certificates ---------- */
+
+.certificates-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto 40px auto;
+    padding: 10px;
+}
+
+.certificate-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border-left: 4px solid #0078ff;
+    text-align: left;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.certificate-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.certificate-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    color: #222;
+}
+
+.certificate-card p {
+    color: #666;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.certificate-card a {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 8px 12px;
+    background: #0078ff;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    transition: background 0.2s ease;
+}
+
+.certificate-card a:hover {
+    background: #005fcc;
+}
