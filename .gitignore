@@ -29,3 +29,7 @@ Thumbs.db
 
 # Junie memory (if applicable)
 .junie/
+
+# VS Code settings
+.vscode/
+*.code-workspace
