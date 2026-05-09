@@ -1,8 +1,9 @@
 // Fetch Coursera certificates from API endpoint
 async function loadCourseraCertificates() {
     try {
-        //const response = await fetch('/api/certificates/coursera');
-        const response = await fetch('http://localhost:8080/api/certificates/coursera');
+        // Use the globally defined backend API URL
+        const apiUrl = `${window.BACKEND_API_URL}/api/certificates/coursera`;
+        const response = await fetch(apiUrl);
         
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
