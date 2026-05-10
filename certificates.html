@@ -56,15 +56,7 @@
         </p>
     </footer>
 
-    <script>
-        // Inject Jekyll variable into JavaScript
-        window.BACKEND_API_URL = "{{ site.backend_api_url }}";
-        // If Jekyll didn't process the variable (e.g., when opening directly in browser/IDE preview),
-        // default to local backend URL.
-        if (window.BACKEND_API_URL.includes("{{") || window.BACKEND_API_URL.includes("}}")) {
-            window.BACKEND_API_URL = "http://localhost:8080";
-        }
-    </script>
+    <script src="js/config.js.liquid"></script>
     <script src="js/certificates.js"></script>
 
 </body>
