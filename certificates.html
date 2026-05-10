@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,64 +10,74 @@
 </head>
 <body>
 
-    <header>
-        <h1>Péter Kuba</h1>
-        <p>Certificates & Credentials</p>
-    </header>
+<header>
+    <h1>Péter Kuba</h1>
+    <p>Certificates & Credentials</p>
+</header>
 
-    <section class="about">
-        <h2>My Certificates</h2>
-        <p>
-            I'm committed to continuous learning and professional development.
-            Here are my certifications from leading online platforms.
-        </p>
-    </section>
+<section class="about">
+    <h2>My Certificates</h2>
+    <p>
+        I'm committed to continuous learning and professional development.
+        Here are my certifications from leading online platforms.
+    </p>
+</section>
 
-    <section class="professional-details">
-        <h2>Coursera Certificates</h2>
-        <div id="coursera-certificates" class="certificates-list">
-            <p style="text-align: center; color: #999;">Loading certificates...</p>
+<section class="professional-details">
+    <h2>Coursera Certificates</h2>
+    <div id="coursera-certificates" class="certificates-list">
+        <p style="text-align: center; color: #999;">Loading certificates...</p>
+    </div>
+</section>
+
+<section class="professional-details">
+    <h2>Udemy Certificates</h2>
+    <div id="udemy-certificates" class="certificates-list">
+        <p style="text-align: center; color: #999;">Loading certificates...</p>
+    </div>
+</section>
+
+<section class="professional-details">
+    <h2>edX Certificates</h2>
+    <div id="edx-certificates" class="certificates-list">
+        <p style="text-align: center; color: #999;">Loading certificates...</p>
+    </div>
+</section>
+
+<section class="professional-details">
+    <h2>HackerRank Certificates</h2>
+    <div class="certificates-list">
+        <div class="certificate-card">
+            <h3>Certificate Name</h3>
+            <p><strong>Platform:</strong> HackerRank</p>
+            <p><strong>Skill:</strong> [Skill/Language]</p>
+            <p><strong>Completion Date:</strong> [Date]</p>
+            <a href="#" target="_blank">View Certificate</a>
         </div>
-    </section>
+        <!-- Add more HackerRank certificates as needed -->
+    </div>
+</section>
 
-    <section class="professional-details">
-        <h2>HackerRank Certificates</h2>
-        <div class="certificates-list">
-            <div class="certificate-card">
-                <h3>Certificate Name</h3>
-                <p><strong>Platform:</strong> HackerRank</p>
-                <p><strong>Skill:</strong> [Skill/Language]</p>
-                <p><strong>Completion Date:</strong> [Date]</p>
-                <a href="#" target="_blank">View Certificate</a>
-            </div>
-            <!-- Add more HackerRank certificates as needed -->
-        </div>
-    </section>
+<section>
+    <p style="text-align: center; margin-top: 40px;">
+        <a href="index.html" style="color: #0078ff; text-decoration: none;">← Back to Portfolio</a>
+    </p>
+</section>
 
-    <section>
-        <p style="text-align: center; margin-top: 40px;">
-            <a href="index.html" style="color: #0078ff; text-decoration: none;">← Back to Portfolio</a>
-        </p>
-    </section>
+<footer>
+    <p>Connect with me:</p>
+    <p>
+        <a href="https://github.com/kubapeter" target="_blank">GitHub</a> •
+        <a href="https://www.linkedin.com/in/péter-kuba-0013b52b7" target="_blank">LinkedIn</a>
+    </p>
+</footer>
 
-    <footer>
-        <p>Connect with me:</p>
-        <p>
-            <a href="https://github.com/kubapeter" target="_blank">GitHub</a> •
-            <a href="https://www.linkedin.com/in/péter-kuba-0013b52b7" target="_blank">LinkedIn</a>
-        </p>
-    </footer>
-
-    <script>
-        // Inject Jekyll variable into JavaScript
-        window.BACKEND_API_URL = "{{ site.backend_api_url }}";
-        // If Jekyll didn't process the variable (e.g., when opening directly in browser/IDE preview),
-        // default to local backend URL.
-        if (window.BACKEND_API_URL.includes("{{") || window.BACKEND_API_URL.includes("}}")) {
-            window.BACKEND_API_URL = "http://localhost:8080";
-        }
-    </script>
-    <script src="js/certificates.js"></script>
+<script>
+    // Set the backend API URL using Jekyll's site variable
+    window.BACKEND_API_URL = "{{ site.backend_api_url }}";
+</script>
+<script src="js/config.js"></script> <!-- config.js will now provide fallback if needed -->
+<script src="js/certificates.js"></script>
 
 </body>
 </html>
