@@ -1,1 +1,1 @@
-backend_api_url: "https://your-cloud-backend-url.com" # <--- REPLACE THIS WITH YOUR ACTUAL CLOUD BACKEND URL
+backend_api_url: "https://kubapetergithubio-backend-production.up.railway.app"
