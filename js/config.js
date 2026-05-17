@@ -7,6 +7,6 @@ const isProduction = window.location.hostname !== 'localhost' &&
 
 window.CONFIG = {
     BACKEND_API_URL: isProduction 
-        ? 'https://kubapetergithubio-backend-production.up.railway.app'
+        ? 'https://kubapeter-backend.29uwppkvhe3f.eu-de.codeengine.appdomain.cloud' //'https://kubapetergithubio-backend-production.up.railway.app'
         : 'http://localhost:8080'
 };
