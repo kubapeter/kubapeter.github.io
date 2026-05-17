@@ -56,11 +56,7 @@
         </p>
     </footer>
 
-    <script>
-        // Set the backend API URL using Jekyll's site variable
-        window.BACKEND_API_URL = "{{ site.backend_api_url }}";
-    </script>
-    <script src="js/config.js"></script> <!-- config.js will now provide fallback if needed -->
+    <script src="js/config.js"></script> <!-- config.js now handles environment detection -->
     <script src="js/certificates.js"></script>
 
 </body>
