@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Settings - Péter Kuba</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <style>
+        .api-settings-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .api-option {
+            margin: 20px 0;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            transition: border-color 0.2s ease, background-color 0.2s ease;
+        }
+
+        .api-option:hover {
+            border-color: #0078ff;
+            background-color: #f9f9f9;
+        }
+
+        .api-option input[type="radio"] {
+            margin-right: 12px;
+            cursor: pointer;
+            width: 18px;
+            height: 18px;
+        }
+
+        .api-option label {
+            cursor: pointer;
+            display: flex;
+            align-items: flex-start;
+            font-size: 1rem;
+        }
+
+        .api-option-content {
+            flex: 1;
+        }
+
+        .api-option-url {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .api-option-description {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .save-button {
+            display: block;
+            margin: 30px auto 0;
+            padding: 12px 30px;
+            background: #0078ff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .save-button:hover {
+            background: #005fcc;
+        }
+
+        .current-url-display {
+            background: #f0f7ff;
+            border: 1px solid #0078ff;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .current-url-label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .current-url-value {
+            font-weight: 600;
+            color: #0078ff;
+            word-break: break-all;
+            font-family: monospace;
+            margin-top: 8px;
+        }
+
+        .success-message {
+            display: none;
+            background: #d4edda;
+            color: #155724;
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Péter Kuba</h1>
+        <p>API Settings</p>
+    </header>
+
+    <section class="professional-details">
+        <h2>Configure Backend API</h2>
+
+        <div class="api-settings-container">
+            <form id="apiSettingsForm">
+                <div class="api-option">
+                    <label>
+                        <input type="radio" name="apiUrl" value="http://localhost:8080" id="api-local">
+                        <div class="api-option-content">
+                            <div class="api-option-url">Local Development</div>
+                            <div class="api-option-description">http://localhost:8080</div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="api-option">
+                    <label>
+                        <input type="radio" name="apiUrl" value="https://kubapeter-backend.29uwppkvhe3f.eu-de.codeengine.appdomain.cloud" id="api-ibm">
+                        <div class="api-option-content">
+                            <div class="api-option-url">IBM Cloud (Production)</div>
+                            <div class="api-option-description">https://kubapeter-backend.29uwppkvhe3f.eu-de.codeengine.appdomain.cloud</div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="api-option">
+                    <label>
+                        <input type="radio" name="apiUrl" value="https://kubapetergithubio-backend-production.up.railway.app" id="api-railway">
+                        <div class="api-option-content">
+                            <div class="api-option-url">Railway (Production)</div>
+                            <div class="api-option-description">https://kubapetergithubio-backend-production.up.railway.app</div>
+                        </div>
+                    </label>
+                </div>
+
+                <button type="submit" class="save-button">Save Settings</button>
+
+                <div class="success-message" id="successMessage">
+                    ✓ Settings saved successfully!
+                </div>
+            </form>
+
+            <div class="current-url-display">
+                <div class="current-url-label">Currently Active API URL:</div>
+                <div class="current-url-value" id="currentUrl">Loading...</div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <p style="text-align: center; margin-top: 40px;">
+            <a href="index.html" style="color: #0078ff; text-decoration: none;">← Back to Portfolio</a>
+        </p>
+    </section>
+
+    <footer>
+        <p>Connect with me:</p>
+        <p>
+            <a href="https://github.com/kubapeter" target="_blank">GitHub</a> •
+            <a href="https://www.linkedin.com/in/péter-kuba-0013b52b7" target="_blank">LinkedIn</a>
+        </p>
+    </footer>
+
+    <script src="js/config.js"></script>
+    <script src="js/api-settings.js"></script>
+
+</body>
+</html>
+
