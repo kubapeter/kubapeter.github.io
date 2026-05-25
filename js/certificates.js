@@ -3,7 +3,7 @@ async function loadCourseraCertificates() {
     try {
         // Use the globally defined backend API URL from config.js
         //const apiUrl = `${window.CONFIG.BACKEND_API_URL}/api/certificates/coursera`;
-        const apiUrl = `${window.CONFIG.BACKEND_API_URL}/api/db/certificates`;
+        const apiUrl = `${window.CONFIG.BACKEND_API_URL}/api/certificates`;
         const response = await fetch(apiUrl);
         
         if (!response.ok) {
