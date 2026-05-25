@@ -2,7 +2,8 @@
 async function loadCourseraCertificates() {
     try {
         // Use the globally defined backend API URL from config.js
-        const apiUrl = `${window.CONFIG.BACKEND_API_URL}/api/certificates/coursera`;
+        //const apiUrl = `${window.CONFIG.BACKEND_API_URL}/api/certificates/coursera`;
+        const apiUrl = `${window.CONFIG.BACKEND_API_URL}/api/db/certificates`;
         const response = await fetch(apiUrl);
         
         if (!response.ok) {
@@ -29,7 +30,7 @@ function displayCourseraCertificates(certificates) {
     
     container.innerHTML = certificates.map(cert => `
         <div class="certificate-card">
-            <h3>${cert.name}</h3>
+            <h3>${cert.title}</h3>
             <p><strong>Platform:</strong> Coursera</p>
             <p><strong>Issuer:</strong> ${cert.issuer}</p>
             <p><strong>Completion Date:</strong> ${cert.completionDate}</p>
