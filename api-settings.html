@@ -105,6 +105,78 @@
             margin-top: 15px;
             text-align: center;
         }
+
+        .db-settings-container {
+            max-width: 600px;
+            margin: 40px auto 0;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-top: 3px solid #28a745;
+        }
+
+        .db-option {
+            margin: 20px 0;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            transition: border-color 0.2s ease, background-color 0.2s ease;
+        }
+
+        .db-option:hover {
+            border-color: #28a745;
+            background-color: #f9f9f9;
+        }
+
+        .db-option input[type="radio"] {
+            margin-right: 12px;
+            cursor: pointer;
+            width: 18px;
+            height: 18px;
+        }
+
+        .db-option label {
+            cursor: pointer;
+            display: flex;
+            align-items: flex-start;
+            font-size: 1rem;
+        }
+
+        .db-option-content {
+            flex: 1;
+        }
+
+        .db-option-name {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .db-option-description {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .current-db-display {
+            background: #f0fff4;
+            border: 1px solid #28a745;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .current-db-label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .current-db-value {
+            font-weight: 600;
+            color: #28a745;
+            margin-top: 8px;
+        }
     </style>
 </head>
 <body>
@@ -159,6 +231,45 @@
             <div class="current-url-display">
                 <div class="current-url-label">Currently Active API URL:</div>
                 <div class="current-url-value" id="currentUrl">Loading...</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="professional-details">
+        <h2>Configure Database</h2>
+
+        <div class="db-settings-container">
+            <form id="dbSettingsForm">
+                <div class="db-option">
+                    <label>
+                        <input type="radio" name="database" value="ORACLE" id="db-oracle">
+                        <div class="db-option-content">
+                            <div class="db-option-name">Oracle Database (ATP)</div>
+                            <div class="db-option-description">Oracle Autonomous Transaction Processing</div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="db-option">
+                    <label>
+                        <input type="radio" name="database" value="DB2" id="db-db2">
+                        <div class="db-option-content">
+                            <div class="db-option-name">IBM DB2 (Cloud)</div>
+                            <div class="db-option-description">IBM Db2 on Cloud</div>
+                        </div>
+                    </label>
+                </div>
+
+                <button type="submit" class="save-button">Save Database Settings</button>
+
+                <div class="success-message" id="dbSuccessMessage">
+                    ✓ Database settings saved successfully!
+                </div>
+            </form>
+
+            <div class="current-db-display">
+                <div class="current-db-label">Currently Active Database:</div>
+                <div class="current-db-value" id="currentDb">Loading...</div>
             </div>
         </div>
     </section>

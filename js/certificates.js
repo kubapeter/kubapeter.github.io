@@ -4,8 +4,17 @@ async function loadCourseraCertificates() {
         // Use the globally defined backend API URL from config.js
         //const apiUrl = `${window.CONFIG.BACKEND_API_URL}/api/certificates/coursera`;
         const apiUrl = `${window.CONFIG.BACKEND_API_URL}/api/certificates`;
-        const response = await fetch(apiUrl);
-        
+
+        // Get selected database from localStorage
+        const selectedDatabase = localStorage.getItem('SELECTED_DATABASE') || 'ORACLE';
+
+        const response = await fetch(apiUrl, {
+            headers: {
+                'X-DB-SELECT': selectedDatabase,
+                'Content-Type': 'application/json'
+            }
+        });
+
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }

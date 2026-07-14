@@ -1,41 +1,56 @@
-// API Settings Management
+// API & Database Settings Management
 document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('apiSettingsForm');
+    const apiForm = document.getElementById('apiSettingsForm');
+    const dbForm = document.getElementById('dbSettingsForm');
     const currentUrlDisplay = document.getElementById('currentUrl');
-    const successMessage = document.getElementById('successMessage');
+    const currentDbDisplay = document.getElementById('currentDb');
+    const apiSuccessMessage = document.getElementById('successMessage');
+    const dbSuccessMessage = document.getElementById('dbSuccessMessage');
 
-    // Display the current API URL
+    // Display current API URL
     currentUrlDisplay.textContent = window.CONFIG.BACKEND_API_URL;
 
-    // Set the selected radio button to the current URL
+    // Set the selected API radio button
     const currentUrl = window.CONFIG.BACKEND_API_URL;
-    const radioButton = document.querySelector(`input[name="apiUrl"][value="${currentUrl}"]`);
-    if (radioButton) {
-        radioButton.checked = true;
+    const apiRadioButton = document.querySelector(`input[name="apiUrl"][value="${currentUrl}"]`);
+    if (apiRadioButton) {
+        apiRadioButton.checked = true;
     }
 
-    // Handle form submission
-    form.addEventListener('submit', function(e) {
+    // Display current database
+    const currentDb = localStorage.getItem('SELECTED_DATABASE') || 'ORACLE';
+    currentDbDisplay.textContent = currentDb;
+    const dbRadioButton = document.querySelector(`input[name="database"][value="${currentDb}"]`);
+    if (dbRadioButton) {
+        dbRadioButton.checked = true;
+    }
+
+    // Handle API form submission
+    apiForm.addEventListener('submit', function(e) {
         e.preventDefault();
 
-        // Get the selected API URL
         const selectedUrl = document.querySelector('input[name="apiUrl"]:checked').value;
-
-        // Save to localStorage
         localStorage.setItem('CUSTOM_BACKEND_API_URL', selectedUrl);
-
-        // Update the global CONFIG object
         window.CONFIG.BACKEND_API_URL = selectedUrl;
-
-        // Update the display
         currentUrlDisplay.textContent = selectedUrl;
 
-        // Show success message
-        successMessage.style.display = 'block';
-
-        // Hide success message after 3 seconds
+        apiSuccessMessage.style.display = 'block';
         setTimeout(function() {
-            successMessage.style.display = 'none';
+            apiSuccessMessage.style.display = 'none';
+        }, 3000);
+    });
+
+    // Handle Database form submission
+    dbForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const selectedDb = document.querySelector('input[name="database"]:checked').value;
+        localStorage.setItem('SELECTED_DATABASE', selectedDb);
+        currentDbDisplay.textContent = selectedDb;
+
+        dbSuccessMessage.style.display = 'block';
+        setTimeout(function() {
+            dbSuccessMessage.style.display = 'none';
         }, 3000);
     });
 });
