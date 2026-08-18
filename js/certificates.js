@@ -6,7 +6,7 @@ async function loadCourseraCertificates() {
         const apiUrl = `${window.CONFIG.BACKEND_API_URL}/api/certificates`;
 
         // Get selected database from localStorage
-        const selectedDatabase = localStorage.getItem('SELECTED_DATABASE') || 'ORACLE';
+        const selectedDatabase = localStorage.getItem('SELECTED_DATABASE') || 'DB2';
 
         const response = await fetch(apiUrl, {
             headers: {
@@ -18,7 +18,7 @@ async function loadCourseraCertificates() {
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
-        
+
         const certificates = await response.json();
         displayCourseraCertificates(certificates);
     } catch (error) {
@@ -31,12 +31,12 @@ async function loadCourseraCertificates() {
 // Display Coursera certificates in the DOM
 function displayCourseraCertificates(certificates) {
     const container = document.getElementById('coursera-certificates');
-    
+
     if (!certificates || certificates.length === 0) {
         container.innerHTML = '<p style="text-align: center; color: #999;">No certificates found.</p>';
         return;
     }
-    
+
     container.innerHTML = certificates.map(cert => `
         <div class="certificate-card">
             <h3>${cert.title}</h3>

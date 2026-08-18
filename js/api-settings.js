@@ -17,8 +17,12 @@ document.addEventListener('DOMContentLoaded', function() {
         apiRadioButton.checked = true;
     }
 
-    // Display current database
-    const currentDb = localStorage.getItem('SELECTED_DATABASE') || 'ORACLE';
+    // Display current database (only DB2 is currently active)
+    let currentDb = localStorage.getItem('SELECTED_DATABASE') || 'DB2';
+    if (currentDb !== 'DB2') {
+        currentDb = 'DB2';
+        localStorage.setItem('SELECTED_DATABASE', currentDb);
+    }
     currentDbDisplay.textContent = currentDb;
     const dbRadioButton = document.querySelector(`input[name="database"][value="${currentDb}"]`);
     if (dbRadioButton) {
@@ -54,4 +58,3 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 3000);
     });
 });
-
